@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBars, FaTwitter } from "react-icons/fa";
-import { useContext, useState } from "react";
+import {useState, useEffect} from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 import MobileOverlay from "../mobile-overlay/MobileOverlay";
@@ -8,6 +8,7 @@ import MobileOverlay from "../mobile-overlay/MobileOverlay";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isTrue, setIsTrue] = useState(false);
+  const [uderline, setuderline] = useState(false);
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);

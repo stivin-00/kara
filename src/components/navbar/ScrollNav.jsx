@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTwitter } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./scrollNav.scss";
 
 const ScrollNav = () => {
