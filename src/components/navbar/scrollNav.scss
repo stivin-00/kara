@@ -1,0 +1,205 @@
+@import "../../app.scss";
+
+.scroll-navbar {
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s all ease-in-out;
+
+  &.scrolled {
+    background-color: var(--main-color);
+  }
+
+  .container {
+    width: 90%;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+
+    @include mobile {
+      width: 100%;
+      padding: 0px 20px;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        align-items: left;
+      }
+
+      .img-big {
+        height: auto;
+        width: 6rem;
+        margin-top: 2rem;
+        // margin-right: 40px;
+
+        @include mobile {
+          margin-top: 1rem;
+          height: auto;
+          width: 4rem;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        align-items: right;
+      }
+
+      span {
+        position: relative;
+        margin-right: 20px;
+        font-size: 20px;
+        font-family: "Permanent Marker", cursive;
+        cursor: pointer;
+
+        @include tablet {
+          display: none;
+        }
+
+        &.navbarmainLinks {
+          @include tablet {
+            display: block;
+          }
+        }
+      }
+      .first-right {
+        @include tablet {
+          display: none;
+        }
+      }
+      .second-right {
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
+      .third-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        @include tablet {
+          display: none;
+        }
+
+        a {
+          transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          height: 35px;
+          width: 35px;
+          opacity: 1;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #fff;
+          color: #fff;
+          font-size: 2rem;
+          margin: 0.3rem;
+          background: blue;
+        }
+      }
+    }
+  }
+}
+
+.mobile-overlay {
+  height: 100%;
+  width: 0 !important;
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s;
+  // display: flex;
+
+  // justify-content: center;
+  // align-items: center;
+
+  .mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // margin-top: 1rem;
+    width: 100vw;
+    height: 100vh;
+    background: var(--pink);
+
+    .mobile-row {
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      img {
+        height: auto;
+        width: 4rem;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 60vw;
+
+      .link {
+        margin: 1rem;
+      }
+
+      span {
+        position: relative;
+        margin-right: 20px;
+        font-size: 30px;
+        font-family: "Permanent Marker", cursive;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+span::before {
+  content: "";
+  transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  opacity: 0;
+  background: url(https://karafuru.io/_next/static/media/nav-underline.6995f6e9.png)
+    no-repeat 50%;
+  background-size: contain;
+  display: inline-block;
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+span:hover::before {
+  opacity: 1;
+}
+.third-right a:hover {
+  opacity: 0.7 !important;
+}
+.overlay-true {
+  width: 100% !important;
+}
