@@ -6,14 +6,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "./authContext/AuthContext";
 import News from "./pages/news/News";
 
 const App = () => {
-  const { user } = useContext(AuthContext);
   return (
     <Router>
       <Switch>
