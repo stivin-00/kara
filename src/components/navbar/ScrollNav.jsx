@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTwitter } from "react-icons/fa";
+import { FaBars, FaTimes, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
 import "./scrollNav.scss";
 
@@ -24,7 +24,7 @@ const ScrollNav = () => {
               alt="eflix"
             />
             <div>
-              <FaBars
+              <FaTimes
                 style={{ fontSize: "30" }}
                 onClick={() => setIsTrue(false)}
               />

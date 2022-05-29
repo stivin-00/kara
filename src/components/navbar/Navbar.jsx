@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBars, FaTwitter } from "react-icons/fa";
+import { FaBars, FaTimes, FaTwitter } from "react-icons/fa";
 import {useState, useEffect} from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
@@ -27,7 +27,7 @@ const Navbar = () => {
               alt="eflix"
             />
             <div>
-              <FaBars
+              <FaTimes
                 style={{ fontSize: "30" }}
                 onClick={() => setIsTrue(false)}
               />
